@@ -1,24 +1,10 @@
-
-//
-// Disclaimer:
-// ----------
-//
-// This code will work only if you selected window, graphics and audio.
-//
-// Note that the "Run Script" build phase will copy the required frameworks
-// or dylibs to your application bundle so you can execute it on any OS X
-// computer.
-//
-// Your resource files (images, sounds, fonts, ...) are also copied to your
-// application bundle. To get the path to these resources, use the helper
-// function `resourcePath()` from ResourcePath.hpp
-//
-
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 
 // Here is a small helper for you! Have a look.
 #include "ResourcePath.hpp"
+
+//using namespace sf;
 
 int main(int, char const**)
 {
@@ -34,7 +20,7 @@ int main(int, char const**)
 
     // Load a sprite to display
     sf::Texture texture;
-    if (!texture.loadFromFile(resourcePath() + "cute_image.jpg")) {
+    if (!texture.loadFromFile(resourcePath() + "Spaceship.jpg")) {
         return EXIT_FAILURE;
     }
     sf::Sprite sprite(texture);
@@ -44,7 +30,7 @@ int main(int, char const**)
     if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
         return EXIT_FAILURE;
     }
-    sf::Text text("Hello SFML", font, 50);
+    sf::Text text("I LOVE ALE", font, 50);
     text.setFillColor(sf::Color::Black);
 
     // Load a music to play
@@ -81,7 +67,7 @@ int main(int, char const**)
         window.draw(sprite);
 
         // Draw the string
-        window.draw(text);
+        //window.draw(text);
 
         // Update the window
         window.display();
